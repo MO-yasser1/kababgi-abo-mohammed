@@ -1,0 +1,16 @@
+# ======================================================================
+# _headers.template — اختياري لكن موصى به
+# انسخه داخل مجلد المطعم باسم  _headers  (بدون .template) قبل الرفع.
+# بيخلي متصفح العميل يسأل الاستضافة "في نسخة أحدث؟" كل مرة، فتحديث المنيو
+# يظهر بسرعة. مش بيبطّئ الموقع لأن المتصفح بيعيد استخدام الملف لو ما اتغيرش.
+# ======================================================================
+/menu-data.js
+  Cache-Control: no-cache
+/engine.js
+  Cache-Control: no-cache
+/render.js
+  Cache-Control: no-cache
+/style.css
+  Cache-Control: no-cache
+/index.html
+  Cache-Control: no-cache

@@ -1,0 +1,59 @@
+<!doctype html>
+<!-- لتبديل الشكل: غيّر data-theme بين "dark" (داكن دافئ) و"light" (رخامي فاتح) -->
+<html lang="ar" dir="rtl" data-theme="dark">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>كبابجي أبو محمد — المنيو</title>
+  <meta name="description" content="منيو كبابجي أبو محمد — ملوك الأكل الشرقي. اطلب من الموبايل وأرسل طلبك على واتساب.">
+  <link rel="icon" href="assets/logo.webp" type="image/webp">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <!-- الخطوط تتحمل بدون ما توقف ظهور الصفحة، ولها بدائل في style.css -->
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Aref+Ruqaa:wght@400;700&family=Tajawal:wght@400;500;700;800&display=swap" media="print" onload="this.media='all'">
+  <link rel="stylesheet" href="style.css">
+  <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Aref+Ruqaa:wght@400;700&family=Tajawal:wght@400;500;700;800&display=swap"></noscript>
+</head>
+<body>
+  <!-- رسومات القوس (قص + تدرج ذهبي) تُستخدم في كل الصفحة -->
+  <svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false">
+    <defs>
+      <clipPath id="archClip" clipPathUnits="objectBoundingBox">
+        <path transform="scale(0.0033333 0.0030303)" d="M4 330 V140 C4 96 38 74 66 52 C98 28 124 16 150 3 C176 16 202 28 234 52 C262 74 296 96 296 140 V330 Z"/>
+      </clipPath>
+      <linearGradient id="goldGrad" x1="0" y1="0" x2="1" y2="1">
+        <stop offset="0" style="stop-color:var(--gold-a)"/>
+        <stop offset="0.5" style="stop-color:var(--gold-b)"/>
+        <stop offset="1" style="stop-color:var(--gold-c)"/>
+      </linearGradient>
+    </defs>
+  </svg>
+  <template id="tpl-arch-frame">
+    <svg class="arch-frame" viewBox="0 0 300 330" preserveAspectRatio="none" aria-hidden="true" focusable="false">
+      <path d="M4 330 V140 C4 96 38 74 66 52 C98 28 124 16 150 3 C176 16 202 28 234 52 C262 74 296 96 296 140 V330"/>
+      <path class="inner" d="M14 330 V142 C14 102 46 82 72 62 C102 40 128 28 150 16 C172 28 198 40 228 62 C254 82 286 102 286 142 V330"/>
+    </svg>
+  </template>
+
+  <!-- شاشة التحميل / المقدمة (مرة واحدة في الزيارة) -->
+  <div id="screen" class="screen loading" role="status" aria-live="polite">
+    <div class="screen-arch" aria-hidden="true">
+      <svg viewBox="0 0 300 330" preserveAspectRatio="none">
+        <path class="arch-path" pathLength="1000" fill="none" stroke="url(#goldGrad)" stroke-width="4" vector-effect="non-scaling-stroke"
+          d="M4 330 V140 C4 96 38 74 66 52 C98 28 124 16 150 3 C176 16 202 28 234 52 C262 74 296 96 296 140 V330"/>
+      </svg>
+      <div class="seal seal-wrap"><img src="assets/logo.webp" alt="" width="560" height="560"></div>
+    </div>
+    <p class="screen-text" id="screen-text">جاري تحميل المنيو…</p>
+  </div>
+
+  <div id="app" aria-busy="true"></div>
+  <div id="sheet-root"></div>
+  <div id="toast" class="toast" role="status" aria-live="polite"></div>
+
+  <script src="config.js"></script>
+  <script src="menu-data.js"></script>
+  <script src="engine.js"></script>
+  <script src="render.js"></script>
+</body>
+</html>
